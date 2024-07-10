@@ -1,11 +1,10 @@
-const userModule = require("../models/userModel")
+const userModule = require("../../models/userModel")
 
 async function userDetailsController(req,res){
     try{
         console.log("userid",req.userId)
         const user = await userModule.findById(req.userId)
-        console.log("user",user)
-
+        
         res.status(200).json({
             data:user,
             error:false,

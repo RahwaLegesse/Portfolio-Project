@@ -1,4 +1,4 @@
-const userModule = require("../models/userModel")
+const userModule = require("../../models/userModel")
 
 
 async function allUsers(req,res){

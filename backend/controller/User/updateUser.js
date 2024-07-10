@@ -1,4 +1,5 @@
-const userModule = require("../models/userModel")
+const userModule = require("../../models/userModel")
+
 
 async function updateUser(req,res){
     try{

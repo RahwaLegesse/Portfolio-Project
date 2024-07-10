@@ -28,6 +28,7 @@ const router = createBrowserRouter([
                 path:"SignUp",
                 element:<SignUp/>
             },
+            
             {
                 path : "admin-panel",
                 element : <AdminPanel/>,

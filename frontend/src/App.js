@@ -34,7 +34,7 @@ function App() {
   return (
   <>
   <Context.Provider value={{
-    fetchDetails 
+    fetchDetails
   }}>
     <ToastContainer />
   <Header/>
