@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
-import productCategory from '../helpers/productCategory'
-import VerticalCard from '../components/VerticalCard'
-import SummaryApi from '../common'
+import productCategory from '../help/productCategory'
+import AllApi from '../common'
 
 const CategoryProduct = () => {
     const [data,setData] = useState([])
@@ -23,8 +22,8 @@ const CategoryProduct = () => {
     const [sortBy,setSortBy] = useState("")
 
     const fetchData = async()=>{
-      const response = await fetch(SummaryApi.filterProduct.url,{
-        method : SummaryApi.filterProduct.method,
+      const response = await fetch(AllApi.filterProduct.url,{
+        method : AllApi.filterProduct.method,
         headers : {
           "content-type" : "application/json"
         },
@@ -144,11 +143,7 @@ const CategoryProduct = () => {
               <p className='font-medium text-slate-800 text-lg my-2'>Search Results : {data.length}</p>
 
              <div className='min-h-[calc(100vh-120px)] overflow-y-scroll max-h-[calc(100vh-120px)]'>
-              {
-                  data.length !== 0 && !loading && (
-                    <VerticalCard data={data} loading={loading}/>
-                  )
-              }
+              
              </div>
             </div>
        </div>

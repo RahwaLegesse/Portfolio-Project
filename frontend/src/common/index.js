@@ -40,6 +40,14 @@ const AllApi = {
     categoryProduct : {
         url : `${backendDomain}/api/get-categoryProduct`,
         method : 'get'
+    },
+    categoryWiseProduct : {
+        url : `${backendDomain}/api/category-product`,
+        method : 'post'
+    },
+    filterProduct : {
+        url : `${backendDomain}/api/filter-product`,
+        method : 'post'
     }
 }
 export default AllApi
