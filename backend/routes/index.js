@@ -1,0 +1,25 @@
+const express = require('express')
+
+const router= express.Router()
+const userSignupController = require("../controller/userSignup.js")
+const userSigninController = require('../controller/userSignin.js')
+const userDetailsController = require('../controller/userDetails.js')
+const authToken = require('../middleware/authToken.js')
+const userLogout = require('../controller/userLogout.js')
+const Allusers = require('../controller/allUsers.js')
+const updateUser = require('../controller/updateUser.js')
+const UploadProductController = require('../controller/uploadProduct.js')
+const getProductController = require('../controller/getProduct.js')
+const updateProductController = require('../controller/updateProduct.js')
+router.post("/signup",userSignupController)
+router.post("/login",userSigninController)
+router.get("/user-details",authToken,userDetailsController)
+router.get("/logout",userLogout)
+router.get("/all-users",authToken,Allusers)
+router.post("/update-user",authToken,updateUser)
+router.post("/upload-product",authToken,UploadProductController)
+
+router.get("/get-product",getProductController)
+router.post("/update-product",authToken,updateProductController)
+
+module.exports = router
